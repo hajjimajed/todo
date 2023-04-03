@@ -1,0 +1,27 @@
+.list-todos-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .table {
+        margin-top: 50px;
+        width: 80%;
+        text-align: left;
+
+        th,
+        td {
+            height: 50px;
+            border-bottom: 1px solid #00000052;
+        }
+
+        th {
+            font-size: 18px;
+        }
+
+        td {
+            font-size: 16px;
+        }
+    }
+}
