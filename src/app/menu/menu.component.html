@@ -1,12 +1,12 @@
 <div class="navigation-container">
     <nav>
         <div class="left">
-            <a routerLink="/welcome/*">Home</a>
-            <a routerLink="/todos">Todos</a>
+            <a *ngIf="HardcodedAuthService.isUserLogged()" routerLink="/welcome/*">Home</a>
+            <a *ngIf="HardcodedAuthService.isUserLogged()" routerLink="/todos">Todos</a>
         </div>
         <div class="right">
-            <a routerLink="/">Login</a>
-            <a routerLink="/logout">Logout</a>
+            <a *ngIf="!HardcodedAuthService.isUserLogged()" routerLink="/">Login</a>
+            <a *ngIf="HardcodedAuthService.isUserLogged()" routerLink="/logout">Logout</a>
         </div>
     </nav>
 </div>
