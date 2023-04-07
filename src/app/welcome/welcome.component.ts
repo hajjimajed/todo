@@ -37,6 +37,19 @@ export class WelcomeComponent implements OnInit {
       .subscribe();
   }
 
+  getWelcomeMessageWithPath(): void {
+    console.log(this.welcomeService.ExecuteHelloWorldWithPath(this.name));
+    this.welcomeService.ExecuteHelloWorldWithPath(this.name)
+      .pipe(
+        tap((response: any) => this.handleSuccessResponse(response)),
+        catchError((error: any): Observable<any> => {
+          this.handleErrorResponse(error);
+          return of(error);
+        })
+      )
+      .subscribe();
+  }
+
 
   handleSuccessResponse(response: any) {
     console.log(response.message)
