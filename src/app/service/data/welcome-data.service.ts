@@ -28,7 +28,7 @@ export class WelcomeDataService {
     let basicAuthHeaderString = this.createBasicAuthHttpHeader();
 
     let headers = new HttpHeaders({
-      Authorrization: basicAuthHeaderString
+      Authorization: basicAuthHeaderString
     })
 
     return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world/path-variable/${name}`,
